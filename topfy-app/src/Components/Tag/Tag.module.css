@@ -1,0 +1,16 @@
+.tag {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: var(--darkblue);
+  border: 1px solid var(--darkblue);
+  transition: 0.2s;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+.activeTag {
+  background-color: var(--darkblue);
+  color: var(--lightcreamy);
+}
