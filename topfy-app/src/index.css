@@ -1,3 +1,9 @@
+:root {
+  --lightblue: #398ab9;
+  --darkblue: #1c658c;
+  --creamy: #d8d2cb;
+  --lightcreamy: #eeeeee;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,7 +11,7 @@
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 li {
   list-style: none;
@@ -23,5 +29,78 @@ img {
 .text-end {
   text-align: end;
 }
+
+/* Color Tools Start  */
+.creamy {
+  color: var(--creamy);
+}
+.lightcreamy {
+  color: var(--lightcreamy);
+}
+.bg-lightblue {
+  background-color: var(--lightblue);
+}
+/* Color Tools End  */
+
+/* Sizing Tools  Start*/
+.p-10 {
+  padding: 10px;
+}
+.p-15 {
+  padding: 15px;
+}
+.p-20 {
+  padding: 20px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.vh-100 {
+  height: 100vh;
+}
+.w-100 {
+  width: 100%;
+}
+
+/* Sizing Tools End  */
+
+/* Layout Tools Start */
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+.gap-10 {
+  gap: 10px;
+}
+/* Layout Tools  END*/
+
+/* Font Tools Start  */
+.font-leckerli {
+  font-family: "Leckerli One", cursive;
+}
+.font-barriecito {
+  font-family: "Barriecito", cursive;
+}
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+/* Font Tools End  */
 
 /* Utility classes -- END */
