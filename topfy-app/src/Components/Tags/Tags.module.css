@@ -1,0 +1,8 @@
+.tagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  max-width: 1200px;
+  max-height: 500px;
+  overflow-y: auto;
+}

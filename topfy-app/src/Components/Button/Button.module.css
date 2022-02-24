@@ -5,7 +5,14 @@
   background: var(--darkblue);
   border-radius: 20px;
   letter-spacing: 2.4px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 .defaultButton > * {
   color: inherit;
+}
+
+.defaultButton:hover {
+  background-color: var(--lightcreamy);
+  color: var(--darkblue);
 }
