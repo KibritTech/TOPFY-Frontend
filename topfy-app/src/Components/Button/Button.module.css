@@ -1,0 +1,11 @@
+.defaultButton {
+  padding: 10px 40px;
+  font-size: 1.4rem;
+  color: var(--creamy);
+  background: var(--darkblue);
+  border-radius: 20px;
+  letter-spacing: 2.4px;
+}
+.defaultButton > * {
+  color: inherit;
+}

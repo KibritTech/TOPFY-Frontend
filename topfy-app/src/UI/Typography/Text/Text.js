@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Text.module.css";
-function Text({ children }) {
-  return <div className={styles.text}>{children}</div>;
+function Text(props) {
+  return <div className={styles.text + " " + props.font}>{props.children}</div>;
 }
 
 export default Text;
