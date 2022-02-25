@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import Text from "../../UI/Typography/Text/Text";
 import Container from "../../UI/Utility/Container/Container";
 import Tags from "../../Components/Tags/Tags";
-import imgSRC from "../../img/Saly-31.png";
+import imgSRC from "../../assets/img/Saly-31.png";
 import Image from "../../UI/Utility/Image/Image";
 import Button from "../../Components/Button/Button";
 
 function TagSelect() {
   //Dummy Data
-  const [tags, setTags] = useState([
+  const tags = [
     {
       id: 1,
       name: "sports",
@@ -23,11 +25,11 @@ function TagSelect() {
       subtags: [
         {
           id: 9,
-          name: "mercedes",
+          name: "bmw",
         },
         {
           id: 10,
-          name: "bmw",
+          name: "mercedes",
         },
         {
           id: 11,
@@ -46,6 +48,16 @@ function TagSelect() {
     {
       id: 4,
       name: "travelling",
+      subtags: [
+        {
+          id: 14,
+          name: "hiking",
+        },
+        {
+          id: 15,
+          name: "touring",
+        },
+      ],
     },
     {
       id: 5,
@@ -63,7 +75,9 @@ function TagSelect() {
       id: 8,
       name: "fishing",
     },
-  ]);
+  ];
+  //Getting the Selected Tags and Storing them in Local Storage.
+
   return (
     <Container>
       <div className="vh-100 bg-lightcreamy p-20 d-flex  justify-content-center align-items-center flex-column pos-rel">
@@ -72,7 +86,9 @@ function TagSelect() {
         </Text>
         <Image source={imgSRC} classes="mw-400" />
         <Tags data={tags} />
-        <Button classes="mt-20">Done</Button>
+        <Button classes="mt-20">
+          <Link to="/home">Done</Link>
+        </Button>
       </div>
     </Container>
   );

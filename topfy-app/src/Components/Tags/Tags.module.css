@@ -1,5 +1,5 @@
 .tagWrapper {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   gap: 11px;
   max-width: 1200px;
