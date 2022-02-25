@@ -3,6 +3,7 @@
   font-size: 1.4rem;
   color: var(--creamy);
   background: var(--darkblue);
+  border: 1px solid var(--darkblue);
   border-radius: 20px;
   letter-spacing: 2.4px;
   transition: 0.3s;

@@ -4,7 +4,7 @@ import Text from "../../UI/Typography/Text/Text";
 import { Link } from "react-router-dom";
 import Container from "../../UI/Utility/Container/Container";
 import Image from "../../UI/Utility/Image/Image";
-import imgSRC from "../../img/Saly-19.png";
+import imgSRC from "../../assets/img/Saly-19.png";
 import Button from "../../Components/Button/Button";
 function Welcome() {
   return (
@@ -14,7 +14,7 @@ function Welcome() {
         <div className="d-flex flex-column align-items-center">
           <Title font="font-leckerli lightcreamy">TOPFY</Title>
           <Text classes="font-montserrat  text-center lightcreamy mt-10">
-            We bring you the content <br /> Only <strong>YOU</strong> want :)
+            Take one picture Pave your <br /> <strong>Future</strong>
           </Text>
         </div>
         <Button>
