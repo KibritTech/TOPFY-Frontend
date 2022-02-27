@@ -1,0 +1,12 @@
+.Post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 200px;
+  max-height: 450px;
+  min-width: 300px;
+  max-width: 600px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 5px;
+}

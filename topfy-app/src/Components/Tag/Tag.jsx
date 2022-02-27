@@ -5,8 +5,10 @@ function Tag(props) {
   let [isSelected, setSelection] = useState(false);
   const SelectionHandler = () => {
     setSelection((isSelected = !isSelected));
-    props.onTagSelect(props.id, isSelected);
-    props.onSelectSave({ id: props.id, name: props.name }, isSelected);
+    if (props.isMain) {
+      props.onTagSelect(props.id, isSelected);
+      props.onSelectSave({ id: props.id, name: props.name }, isSelected);
+    }
   };
   let classes = isSelected ? styles.tag + " " + styles.activeTag : styles.tag;
   return (

@@ -1,0 +1,7 @@
+.tagBar {
+  width: 90%;
+  padding: 20px;
+  overflow-x: scroll;
+  display: flex;
+  gap: 10px;
+}

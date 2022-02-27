@@ -53,6 +53,7 @@ function Tags(props) {
             onTagSelect={(id, isCollapse) => {
               tagArrHandler(id, isCollapse);
             }}
+            isMain={true}
             key={el.id}
             id={el.id}
             name={el.name}

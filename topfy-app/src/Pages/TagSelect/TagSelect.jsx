@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import Text from "../../UI/Typography/Text/Text";
 import Container from "../../UI/Utility/Container/Container";
 import Tags from "../../Components/Tags/Tags";
@@ -76,7 +76,13 @@ function TagSelect() {
       name: "fishing",
     },
   ];
-  //Getting the Selected Tags and Storing them in Local Storage.
+  useEffect(() => {
+    axios
+      .post("http://vahiddev-001-site1.htempurl.com/api/Tags?count=2", {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
+      .then((response) => console.log(response));
+  }, []);
 
   return (
     <Container>
