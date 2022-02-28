@@ -1,12 +1,56 @@
 .Post {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
   gap: 10px;
-  min-height: 200px;
-  max-height: 450px;
+  min-height: 500px;
+  max-height: 850px;
   min-width: 300px;
   max-width: 600px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 5px;
+}
+.Profile {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+.ProfileImage {
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  object-position: center;
+}
+.Post__image {
+  height: 250px;
+  width: 100%;
+}
+.Post__image img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.Post__tag,
+.Post__description {
+  padding: 10px;
+}
+.Post__tag {
+  font-family: "Leckerli One", cursive;
+  text-decoration: underline;
+}
+@media only screen and (min-width: 300px) {
+  .Post {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .Post {
+    min-width: 531px;
+    min-height: 532px;
+  }
 }

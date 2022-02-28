@@ -1,6 +1,9 @@
 .PostList {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 150px;
   align-items: center;
+  margin: 100px 0 0 0;
+
+  padding: 30px 0;
 }

@@ -4,6 +4,9 @@ import styles from "./Tags.module.css";
 function Tags(props) {
   //Storing Selected Tags
   let [selectedTags, setSelectedTags] = useState([]);
+
+  //When selecting, we find out if tag is selected or deselected,
+  //then update the array
   const onSelectSave = (tag, isSelected) => {
     if (isSelected) {
       setSelectedTags((prev) => [...prev, tag]);
@@ -11,11 +14,18 @@ function Tags(props) {
       setSelectedTags(selectedTags.filter((el) => el.id != tag.id));
     }
   };
+
+  //Every time we select a tag we update and save local storage.
   useEffect(() => {
     localStorage.setItem("selectedTAGS", JSON.stringify(selectedTags));
   }, [selectedTags]);
+
   // Tag Sort is a way to align all tags and subtags
-  let [tagSortArr, setTagSortArr] = useState(props.data);
+  let [tagSortArr, setTagSortArr] = useState([]);
+
+  useEffect(() => {
+    setTagSortArr(props.data);
+  }, [props.data]);
 
   //Everytime a tag is selected we rerender the array
   //Find if the tag exists
@@ -23,17 +33,17 @@ function Tags(props) {
   //Otherwise we remove the related subtags
   const tagArrHandler = (id, isExpand) => {
     const tag = tagSortArr.find((el) => el.id === id);
-    if (tag && tag.subtags) {
+    if (tag && tag.childrenTags) {
       const index = tagSortArr.findIndex((el) => {
         return el.id === tag.id;
       });
       if (isExpand) {
-        tagSortArr.splice(index + 1, 0, ...tag.subtags);
+        tagSortArr.splice(index + 1, 0, ...tag.childrenTags);
         setTagSortArr((prevArr) => [...prevArr]);
       } else {
         const newArr = [];
         tagSortArr.forEach((el) => {
-          if (!tag.subtags.includes(el)) {
+          if (!tag.childrenTags.includes(el)) {
             newArr.push(el);
           }
         });
