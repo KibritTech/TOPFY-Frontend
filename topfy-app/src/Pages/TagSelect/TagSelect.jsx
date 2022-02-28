@@ -13,7 +13,7 @@ function TagSelect() {
   const [tags, setTags] = useState([]);
   useEffect(async () => {
     await axios
-      .post("http://vahiddev-001-site1.htempurl.com/api/Tags?count=10", {})
+      .post("http://vahiddev-001-site1.htempurl.com/api/Tags?count=15", {})
       .then((response) => {
         const receivedData = [...response.data.tags];
         setTags((prev) => [...prev, ...receivedData]);
