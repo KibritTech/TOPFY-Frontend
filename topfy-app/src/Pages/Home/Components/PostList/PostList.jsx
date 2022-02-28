@@ -4,12 +4,8 @@ import Post from "../../../../Components/Post/Post";
 import axios from "axios";
 function PostList(props) {
   let [posts, setPosts] = useState([]);
-  // let [isFiltered, setIsFiltered] = useState(props.isFiltered);
   let config;
-
   useEffect(async () => {
-    // setIsFiltered(props.isFiltered);
-
     config = {
       method: "post",
       url: "http://vahiddev-001-site1.htempurl.com/api/Posts?count=15",
