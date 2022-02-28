@@ -10,78 +10,14 @@ import Button from "../../Components/Button/Button";
 
 function TagSelect() {
   //Dummy Data
-  const tags = [
-    {
-      id: 1,
-      name: "sports",
-    },
-    {
-      id: 2,
-      name: "cooking",
-    },
-    {
-      id: 3,
-      name: "cars",
-      subtags: [
-        {
-          id: 9,
-          name: "bmw",
-        },
-        {
-          id: 10,
-          name: "mercedes",
-        },
-        {
-          id: 11,
-          name: "mazda",
-        },
-        {
-          id: 12,
-          name: "dodge",
-        },
-        {
-          id: 13,
-          name: "ford",
-        },
-      ],
-    },
-    {
-      id: 4,
-      name: "travelling",
-      subtags: [
-        {
-          id: 14,
-          name: "hiking",
-        },
-        {
-          id: 15,
-          name: "touring",
-        },
-      ],
-    },
-    {
-      id: 5,
-      name: "gaming",
-    },
-    {
-      id: 6,
-      name: "programming",
-    },
-    {
-      id: 7,
-      name: "marketing",
-    },
-    {
-      id: 8,
-      name: "fishing",
-    },
-  ];
-  useEffect(() => {
-    axios
-      .post("http://vahiddev-001-site1.htempurl.com/api/Tags?count=2", {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((response) => console.log(response));
+  const [tags, setTags] = useState([]);
+  useEffect(async () => {
+    await axios
+      .post("http://vahiddev-001-site1.htempurl.com/api/Tags?count=10", {})
+      .then((response) => {
+        const receivedData = [...response.data.tags];
+        setTags((prev) => [...prev, ...receivedData]);
+      });
   }, []);
 
   return (

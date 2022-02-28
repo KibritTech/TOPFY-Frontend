@@ -8,6 +8,18 @@ function Tag(props) {
     if (props.isMain) {
       props.onTagSelect(props.id, isSelected);
       props.onSelectSave({ id: props.id, name: props.name }, isSelected);
+    } else {
+      let filteredTags = JSON.parse(localStorage.getItem("filterTags"));
+      if (!filteredTags) {
+        filteredTags = [];
+      }
+      if (isSelected) {
+        filteredTags.push({ id: props.id, name: props.name });
+      } else {
+        filteredTags = [...filteredTags.filter((el) => props.id != el.id)];
+      }
+      localStorage.setItem("filterTags", JSON.stringify(filteredTags));
+      props.onSelect();
     }
   };
   let classes = isSelected ? styles.tag + " " + styles.activeTag : styles.tag;
