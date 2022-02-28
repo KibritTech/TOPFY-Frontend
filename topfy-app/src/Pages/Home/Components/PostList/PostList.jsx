@@ -9,39 +9,23 @@ function PostList(props) {
 
   useEffect(async () => {
     // setIsFiltered(props.isFiltered);
-    console.log(props.isFiltered);
-    if (props.isFiltered) {
-      console.log("FILTERED");
-      config = {
-        method: "post",
-        url: "http://vahiddev-001-site1.htempurl.com/api/Posts?count=15",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: {
-          currentPage: 1,
-          tags: localStorage.getItem("filterTags"),
-        },
-      };
-    } else {
-      console.log("DEFAULTS");
-      config = {
-        method: "post",
-        url: "http://vahiddev-001-site1.htempurl.com/api/Posts?count=15",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: {
-          currentPage: 3,
-          tags: localStorage.getItem("selectedTAGS"),
-        },
-      };
-    }
+
+    config = {
+      method: "post",
+      url: "http://vahiddev-001-site1.htempurl.com/api/Posts?count=15",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        currentPage: 1,
+        tags: JSON.stringify(props.filteredJSON),
+      },
+    };
     await axios(config).then((response) => {
       const receivedData = [...response.data.posts];
       setPosts([...receivedData]);
     });
-  }, [props.isFiltered]);
+  }, [props.filteredJSON]);
 
   return (
     <div className={styles.PostList}>
